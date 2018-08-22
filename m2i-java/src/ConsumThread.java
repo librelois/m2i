@@ -1,7 +1,7 @@
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class ConsumThread extends Thread {
-	ConcurrentLinkedQueue<String> queue;
+	private ConcurrentLinkedQueue<String> queue;
 	
 	ConsumThread (ConcurrentLinkedQueue<String> queue) {
 		this.queue = queue;

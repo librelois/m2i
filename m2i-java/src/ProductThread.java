@@ -1,7 +1,7 @@
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class ProductThread extends Thread {
-	ConcurrentLinkedQueue<String> queue;
+	private ConcurrentLinkedQueue<String> queue;
 	
 	ProductThread (ConcurrentLinkedQueue<String> queue) {
 		this.queue = queue;
