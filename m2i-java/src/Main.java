@@ -6,10 +6,12 @@ public class Main {
 	     ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue<String>();
 	      	
 		ProductThread p = new ProductThread(queue);
-		ConsumThread c = new ConsumThread(queue);
+		ConsumThread c1 = new ConsumThread(queue);
+		ConsumThread c2 = new ConsumThread(queue);
 		
 		p.start();
-		c.start();
+		c1.start();
+		c2.start();
 	}
 
 }

@@ -12,7 +12,9 @@ public class ConsumThread extends Thread {
 		while (true) {
 			if (this.queue.size() > 0) {
 				String msg = this.queue.poll();
-				System.out.println(msg);
+				if (msg != null) {
+					System.out.println(msg);
+				}
 			}
 			try {
 				sleep(100);
