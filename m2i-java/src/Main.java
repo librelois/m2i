@@ -2,8 +2,11 @@
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		ThreadA t1 = new ThreadA('+');
+		ThreadA t2 = new ThreadA('-');
+		
+		t1.start();
+		t2.start();
 	}
 
 }
