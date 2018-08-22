@@ -9,10 +9,10 @@ public class ProductThread extends Thread {
 	
 	@Override
 	public void run() {
-		int count = 1;
+		int count = 0;
 		while (true) {
-			this.queue.offer("MSG"+count);
-			count++;
+			String msg = String.format("MSG%d", count++);
+			this.queue.add(msg);
 			try {
 				sleep(100);
 			} catch (InterruptedException e) {
