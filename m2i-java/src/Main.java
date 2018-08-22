@@ -1,14 +1,16 @@
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Main {
 
 	public static void main(String[] args) {
-		ThreadA t1 = new ThreadA('+');
-		ThreadA t2 = new ThreadA('-');
-		ThreadA t3 = new ThreadA('*');
+		//On crée notre collection
+	     ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue<String>();
+	      	
+		ProductThread p = new ProductThread(queue);
+		ConsumThread c = new ConsumThread(queue);
 		
-		t1.start();
-		t2.start();
-		t3.start();
+		p.start();
+		c.start();
 	}
 
 }
