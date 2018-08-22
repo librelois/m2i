@@ -6,6 +6,8 @@ public class ConsumThread extends Thread {
 	ConsumThread (ConcurrentLinkedQueue<String> queue) {
 		this.queue = queue;
 	}
+	
+	@Override
 	public void run() {
 		while (true) {
 			String msg = this.queue.poll();

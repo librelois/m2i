@@ -6,6 +6,8 @@ public class ProductThread extends Thread {
 	ProductThread (ConcurrentLinkedQueue<String> queue) {
 		this.queue = queue;
 	}
+	
+	@Override
 	public void run() {
 		int count = 1;
 		while (true) {
