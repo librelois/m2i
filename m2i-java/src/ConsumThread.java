@@ -2,9 +2,11 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class ConsumThread extends Thread {
 	private ConcurrentLinkedQueue<String> queue;
+	boolean parity;
 
-	ConsumThread(ConcurrentLinkedQueue<String> queue) {
+	ConsumThread(ConcurrentLinkedQueue<String> queue, boolean parity) {
 		this.queue = queue;
+		this.parity = parity;
 	}
 
 	@Override
@@ -13,7 +15,7 @@ public class ConsumThread extends Thread {
 			if (this.queue.size() > 0) {
 				String msg = this.queue.poll();
 				if (msg != null) {
-					System.out.println(msg);
+					System.out.println(String.format("%s : %s", (parity) ? "Pairs" : "Impairs", msg));
 				}
 			}
 			try {
