@@ -11,8 +11,7 @@ public class Main {
 		Connection connection = null;
 		try {
 			Class.forName("org.postgresql.Driver");
-			connection = DriverManager.getConnection(
-					   "jdbc:postgresql://localhost:5432/xmen","postgres", "YcTtmW37");
+			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/xmen", "postgres", "YcTtmW37");
 			System.out.println("Successfully connected to bdd !");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -21,11 +20,11 @@ public class Main {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		// launch interpreter
 		CommandInterpreter ci = new CommandInterpreter(connection, NAME, CAPACITY);
 		ci.launch();
-		
+
 		// Close BDD
 		try {
 			connection.close();
