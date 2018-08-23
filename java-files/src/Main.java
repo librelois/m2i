@@ -26,5 +26,13 @@ public class Main {
 		}
 		FindMinLineInFile finder = new FindMinLineInFile("file.txt");
 		System.out.println("Minimum = "+ finder.find_min_line());
+		
+		try {
+			ExtractParityLinesOfFile ex = new ExtractParityLinesOfFile("file.txt", "pairs.txt", "unpairs.txt");
+			ex.process();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

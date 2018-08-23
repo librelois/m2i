@@ -51,8 +51,7 @@ public class CommandInterpreter {
 			String [] user_command = sc.nextLine().split(" ");
 			
 			// Treat user command
-			switch (user_command[0]) {
-				case "AJOUTER":
+			switch (user_command[0].toLowerCase()) {
 				case "ajouter":
 					try {
 						add_entry(user_command[1]);
@@ -62,7 +61,6 @@ public class CommandInterpreter {
 					}
 					System.out.println(String.format("Message \"%s\" ajouté.", user_command[1]));
 				break;
-				case "AFFICHER":
 				case "afficher":
 					ArrayList<String> msgs = null;
 					try {
@@ -75,7 +73,7 @@ public class CommandInterpreter {
 						System.out.println(msg);
 					}
 				break;
-				case "QUIT": case "quit": quit = true; break;
+				case "quit": quit = true; break;
 			}
 		}
 		sc.close();
