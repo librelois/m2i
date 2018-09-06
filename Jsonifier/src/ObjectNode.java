@@ -4,11 +4,12 @@ import java.util.Map.Entry;
 public class ObjectNode extends JsonNode {
 	protected HashMap<String, Object> map = new HashMap<>();
 
-	public void put(String key, Object value) {
+	public ObjectNode put(String key, Object value) {
 		if (key == null) {
 			throw new NullPointerException();
 		}
 		map.put(key, value);
+		return this;
 	}
 
 	public Object get(String key) {

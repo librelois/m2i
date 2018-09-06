@@ -3,8 +3,9 @@ import java.util.ArrayList;
 public class ArrayNode extends JsonNode {
 	protected ArrayList<Object> list = new ArrayList<>();;
 
-	public void add(Object value) {
+	public ArrayNode add(Object value) {
 		list.add(value);
+		return this;
 	}
 
 	public Object get(int index) {
