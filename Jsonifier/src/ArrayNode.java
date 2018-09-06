@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ArrayNode extends JsonNode {
 	protected ArrayList<Object> list = new ArrayList<>();;
@@ -48,5 +49,10 @@ public class ArrayNode extends JsonNode {
 		}
 		json += "]";
 		return json;
+	}
+
+	@Override
+	public Iterator<Object> iterator() {
+		return list.iterator();
 	}
 }

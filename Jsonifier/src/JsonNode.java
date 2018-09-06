@@ -1,5 +1,5 @@
 
-public abstract class JsonNode {
+public abstract class JsonNode implements Iterable {
 	abstract public void clear();
 
 	public String toJson() {

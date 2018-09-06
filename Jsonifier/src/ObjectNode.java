@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map.Entry;
 
 public class ObjectNode extends JsonNode {
@@ -52,5 +53,10 @@ public class ObjectNode extends JsonNode {
 		}
 		json += "}";
 		return json;
+	}
+
+	@Override
+	public Iterator<Entry<String, Object>> iterator() {
+		return map.entrySet().iterator();
 	}
 }
